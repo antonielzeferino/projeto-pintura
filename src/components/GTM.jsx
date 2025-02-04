@@ -1,36 +1,34 @@
 "use client";
 
 import { useEffect } from "react";
-import Head from "next/head";
+import Script from "next/script";
 
-const GTM_ID = "AW-16850078520"; // Substitua pelo seu ID
+const GTM_ID = "AW-16850078520"; // Substitua pelo seu ID do GTM
 
 export default function GoogleTagManager() {
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        window.dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", GTM_ID);
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
     }
+    gtag("js", new Date());
+    gtag("config", GTM_ID);
   }, []);
 
   return (
-    <Head>
-      {/* Script do GTM no <head> */}
-      <script async src={`https://www.googletagmanager.com/gtag/js?id=${GTM_ID}`} />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){window.dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GTM_ID}');
-          `,
-        }}
+    <>
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GTM_ID}`}
       />
-    </Head>
+      <Script id="gtag-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GTM_ID}');
+        `}
+      </Script>
+      </>
   );
 }

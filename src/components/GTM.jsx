@@ -30,16 +30,6 @@ export default function GoogleTagManager() {
           })(window,document,'script','dataLayer','${GTM_ID}');
         `}
       </Script>
-
-      {/* Código <noscript> para quando o JavaScript estiver desativado */}
-      <noscript>
-        <iframe
-          src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-          height="0"
-          width="0"
-          style={{ display: "none", visibility: "hidden" }}
-        ></iframe>
-      </noscript>
     </>
   );
 }

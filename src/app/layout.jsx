@@ -33,6 +33,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100 flex flex-col min-h-screen`}
       >
+        <noscript>
+        <iframe
+          src={`https://www.googletagmanager.com/ns.html?id=GTM-WMCW5PN5`}
+          height="0"
+          width="0"
+          style={{ display: "none", visibility: "hidden" }}
+        ></iframe>
+      </noscript>
         <Header />
         <main className="mx-auto flex-grow w-full">{children}</main>
       </body>

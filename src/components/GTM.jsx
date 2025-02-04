@@ -27,6 +27,7 @@ export default function GoogleTagManager() {
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', '${GTM_ID}');
+          console.log('fui puxado aqui1')
         `}
       </Script>
       </>

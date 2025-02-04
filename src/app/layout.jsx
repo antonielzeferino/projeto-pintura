@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import heroBG from "../../public/images/hero-bg.jpeg"
+import GoogleTagManager from "@/components/GTM";
  
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
       <head>
+        <GoogleTagManager />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="VCL Pinturas" />
         <meta name="keywords" content="pintura residencial, pintura comercial, pintura para empresas, serviços de pintura, pintura de paredes, pintura profissional" />

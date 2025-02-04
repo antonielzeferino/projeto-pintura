@@ -70,7 +70,7 @@ export default function Home() {
         <h2 className="text-2xl md:text-3xl font-semibold mb-6">Pronto para transformar seu ambiente?</h2>
         <p className="text-base md:text-lg mb-8">Solicite um orçamento agora mesmo para pintura residencial ou comercial e comece a transformação com quem entende do assunto!</p>
         <Link
-          href={`https://wa.me/${phoneNumber}`}
+          href={`https://wa.me/${phoneNumber}?text=Olá, gostaria de solicitar um orçamento para pintura`}
           target="_blank"
           aria-label="Solicite um orçamento para pintura"
           className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg shadow-lg hover:bg-gray-100 transition"
